@@ -1,5 +1,6 @@
 // YOUR CODE BELOW
 function myJoin(array, separator){
+//function to mimic the .join method
     if (separator === undefined){
         separator = ',';
     }
