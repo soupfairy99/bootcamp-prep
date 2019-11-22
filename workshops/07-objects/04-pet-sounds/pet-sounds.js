@@ -37,4 +37,24 @@ let animalNoises = [
   }
 ];
 
-// YOUR CODE BELOW
+// function using above array to extract correct sound from animal and country input 
+
+const petSounds = (animal, country) => {
+  let sound ='';
+  for (let x = 0; x < animalNoises.length; ++x){
+    let currAnimal = animalNoises[x];
+// loop through array looking for animal
+    if (animal in currAnimal){
+      let currSounds = currAnimal[animal];
+//check object for country
+      if (country in currSounds){
+         sound = currSounds[country]; 
+      }
+    }
+  }
+//capitalize first letter of animal name
+  let animalFirst = animal.slice(0,1).toUpperCase(); 
+  let animalLast = animal.slice(1); 
+  let animalNameCaps = animalFirst + animalLast; 
+return `${animalNameCaps}s in ${country} say ${sound}`;
+}
